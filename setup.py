@@ -1,11 +1,11 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0'
+version = '0.1'
 
 setup(name='collective.formtoy',
       version=version,
-      description="A tool to facilitate ad hoc form mock ups in Plone",
+      description="A tool to mock up ad hoc forms in Plone",
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from
@@ -14,9 +14,9 @@ setup(name='collective.formtoy',
         "Framework :: Plone",
         "Programming Language :: Python",
         ],
-      keywords='',
-      author='',
-      author_email='',
+      keywords='html forms, developer tools',
+      author='Alex Clark',
+      author_email='aclark@aclark.net',
       url='http://svn.plone.org/svn/collective/',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
