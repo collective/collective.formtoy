@@ -4,7 +4,10 @@
     xmlns:metal="http://xml.zope.org/namespaces/metal"
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     lang="en"
-    i18n:domain="plone">
+    i18n:domain="plone"
+    metal:use-macro="here/main_template/macros/master">
+
+<div metal:fill-slot="content">
 
 <h1>
 <a tal:attributes="href python: context.absolute_url() + '/@@formtoy'">Form Toy</a>
@@ -58,6 +61,8 @@ ulines, utokens, utext – like lines, tokens, text, but using unicode strings i
 <p>*<a href="http://docs.zope.org/zope2/zdgbook/ObjectPublishing.html#marshalling-arguments-from-the-request">http://docs.zope.org/zope2/zdgbook/ObjectPublishing.html#marshalling-arguments-from-the-request</a></p>
 
 <a tal:attributes="href python: context.absolute_url()">Back to Plone…</a>
+
+</div>
 
 </html>
 
