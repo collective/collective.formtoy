@@ -13,45 +13,50 @@
 <a tal:attributes="href python: context.absolute_url() + '/@@formtoy'">Form Toy</a>
 </h1>
 
+<div tal:condition="python: view.check_params()"> <h2>Method parameters</h2><ul><li tal:repeat="pathitem view/traverse_subpath" tal:content="pathitem" /></ul></div>
+
 <h2>Mock up Zope 2 publisher's marshalling features<sup>1</sup></h2>
 
 <form method="POST">
 
-<fieldset>
-<legend>
-boolean – Converts a variable to true or false. Variables that are 0, None, an empty string, or an empty sequence are false, all others are true.
-</legend>
+<fieldset><legend>boolean – Converts a variable to true or false. Variables that are 0, None, an empty string, or an empty sequence are false, all others are true.</legend><input type="text" name="boolean:boolean" /></fieldset>
 
-<input type="text" name="formtoy:boolean" />
+<fieldset><legend>int – Converts a variable to a Python integer.</legend><input type="text" name="int:int" value="1"/></fieldset>
 
-</fieldset>
+<fieldset><legend>long – Converts a variable to a Python long integer.</legend><input type="text" name="long:long" value="1"/></fieldset>
 
-<tal:comment replace="nothing">
-int – Converts a variable to a Python integer.
-long – Converts a variable to a Python long integer.
-float – Converts a variable to a Python floating point number.
-string – Converts a variable to a Python string.
-ustring – Converts a variable to a Python unicode string.
-required – Raises an exception if the variable is not present or is an empty string.
-ignore_empty – Excludes a variable from the request if the variable is an empty string.
-date – Converts a string to a DateTime object. The formats accepted are fairly flexible, for example ‘10/16/2000’, ‘12:01:13 pm’.
-list – Converts a variable to a Python list of values, even if there is only one value.
-tuple – Converts a variable to a Python tuple of values, even if there is only one value.
-lines – Converts a string to a Python list of values by splitting the string on line breaks.
-tokens – Converts a string to a Python list of values by splitting the string on spaces.
-text – Converts a variable to a string with normalized line breaks. Different browsers on various platforms encode line endings differently, so this converter makes sure the line endings are consistent, regardless of how they were encoded by the browser.
-ulines, utokens, utext – like lines, tokens, text, but using unicode strings instead of plain strings.
-</tal:comment>
+<fieldset><legend>float – Converts a variable to a Python floating point number.</legend><input type="text" name="float:float" value="1"/></fieldset>
+
+<fieldset><legend>string – Converts a variable to a Python string.</legend><input type="text" name="string:string" /></fieldset>
+
+<fieldset><legend>ustring – Converts a variable to a Python unicode string.</legend><input type="text" name="ustring:ustring" /></fieldset>
+
+<fieldset><legend>required – Raises an exception if the variable is not present or is an empty string.</legend><input type="text" name="required:required" value="Remove text to see exception."/></fieldset>
+
+<fieldset><legend>ignore_empty – Excludes a variable from the request if the variable is an empty string.</legend><input type="text" name="ignore_empty:ignore_empty" /></fieldset>
+
+<fieldset><legend>date – Converts a string to a DateTime object. The formats accepted are fairly flexible, for example ‘10/16/2000’, ‘12:01:13 pm’.</legend><input type="text" name="date:date" tal:attributes="value view/context/ZopeTime"/></fieldset>
+
+<fieldset><legend>list – Converts a variable to a Python list of values, even if there is only one value.</legend><input type="text" name="list:list" /></fieldset>
+
+<fieldset><legend>tuple – Converts a variable to a Python tuple of values, even if there is only one value.</legend><input type="text" name="tuple:tuple" /></fieldset>
+
+<fieldset><legend>lines – Converts a string to a Python list of values by splitting the string on line breaks.</legend><input type="text" name="lines:lines" /></fieldset>
+
+<fieldset><legend>tokens – Converts a string to a Python list of values by splitting the string on spaces.</legend><input type="text" name="tokens:tokens" /></fieldset>
+
+<fieldset><legend>text – Converts a variable to a string with normalized line breaks. Different browsers on various platforms encode line endings differently, so this converter makes sure the line endings are consistent, regardless of how they were encoded by the browser.</legend><input type="text" name="text:text" /></fieldset>
+
+<fieldset><legend>ulines, utokens, utext – like lines, tokens, text, but using unicode strings instead of plain strings.</legend><input type="text" name="ulines:ulines" /></fieldset>
+
+<fieldset><legend>ulines, utokens, utext – like lines, tokens, text, but using unicode strings instead of plain strings.</legend><input type="text" name="utokens:utokens" /></fieldset>
+
+<fieldset><legend>ulines, utokens, utext – like lines, tokens, text, but using unicode strings instead of plain strings.</legend><input type="text" name="utext:utext" /></fieldset>
 
 <input type="submit" />
 
 </form>
 
-<div tal:condition="python: view.check_params()"> <h2>URL method parameters</h2>
-    <ul> 
-        <li tal:repeat="pathitem view/traverse_subpath" tal:content="pathitem" />
-    </ul>
-</div>
 
 <h2>Request</h2>
 
