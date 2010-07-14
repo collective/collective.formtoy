@@ -1,0 +1,15 @@
+<configure 
+    xmlns="http://namespaces.zope.org"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    >
+
+    <browser:page
+        for="*"
+        name="formtoy"
+        class=".formtoy.FormToy"
+        template="formtoy.pt"
+        permission="cmf.ManagePortal"
+        allowed_attributes="check_params"
+    />
+
+</configure>
