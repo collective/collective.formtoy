@@ -6,7 +6,9 @@
     lang="en"
     i18n:domain="plone">
 
-<h1>Form toy</h1>
+<h1>
+<a tal:attributes="href python: context.absolute_url() + '/@@formtoy'">Form Toy</a>
+</h1>
 
 <form>
 
@@ -24,6 +26,8 @@
 <h2>Request</h2>
 
 <p tal:content="view/context/REQUEST/form" />
+
+<a tal:attributes="href python: context.absolute_url()">Back to Plone…</a>
 
 </html>
 
