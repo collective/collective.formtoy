@@ -5,16 +5,15 @@
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     lang="en"
     i18n:domain="plone"
-    metal:use-macro="here/main_template/macros/master">
+    metal:use-macro="here/prefs_main_template/macros/master">
 
-<div metal:fill-slot="content">
+<div metal:fill-slot="prefs_configlet_main"> 
 
 <h1>
 <a tal:attributes="href python: context.absolute_url() + '/@@formtoy'">Form Toy</a>
 </h1>
 
-<h2>Mock up Zope 2 publisher's marshalling features*</h2>
-
+<h2>Mock up Zope 2 publisher's marshalling features<sup>1</sup></h2>
 
 <form method="POST">
 
@@ -58,7 +57,7 @@ ulines, utokens, utext – like lines, tokens, text, but using unicode strings i
 
 <p tal:content="view/context/REQUEST/form" />
 
-<p>*<a href="http://docs.zope.org/zope2/zdgbook/ObjectPublishing.html#marshalling-arguments-from-the-request">http://docs.zope.org/zope2/zdgbook/ObjectPublishing.html#marshalling-arguments-from-the-request</a></p>
+<p><sup>1</sup><a href="http://docs.zope.org/zope2/zdgbook/ObjectPublishing.html#marshalling-arguments-from-the-request">http://docs.zope.org/zope2/zdgbook/ObjectPublishing.html#marshalling-arguments-from-the-request</a></p>
 
 <a tal:attributes="href python: context.absolute_url()">Back to Plone…</a>
 
