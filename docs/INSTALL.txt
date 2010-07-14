@@ -4,7 +4,7 @@ collective.formtoy Installation
 If you are using zc.buildout and the plone.recipe.zope2instance
 recipe to manage your project, you can do this:
 
-* Add ``collective.formtoy`` to the list of eggs to install, e.g.:
+* Add ``collective.formtoy`` to the list of eggs to install, e.g::
 
     [instance]
     ...
@@ -12,7 +12,7 @@ recipe to manage your project, you can do this:
         ...
         collective.formtoy
        
-* Re-run buildout, e.g. with:
+* Re-run buildout, e.g. with::
 
     $ ./bin/buildout
         
