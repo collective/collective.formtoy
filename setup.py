@@ -1,39 +1,38 @@
-from setuptools import setup, find_packages
+from setuptools import find_packages
+from setuptools import setup
 import os
 
-version = '0.2'
+VERSION = '0.3.0'
 
-setup(name='collective.formtoy',
-      version=version,
-      description="A tool to mock up ad hoc forms in Plone",
-      long_description=open("README.txt").read() + "\n" +
-                       open(os.path.join("docs", "INSTALL.txt")).read() +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
-      # Get more strings from
-      # http://pypi.python.org/pypi?%3Aaction=list_classifiers
-      classifiers=[
-        "Framework :: Plone",
-        "Programming Language :: Python",
-        ],
-      keywords='html forms, developer tools',
-      author='Alex Clark',
-      author_email='aclark@aclark.net',
-      url='http://svn.plone.org/svn/collective/',
-      license='GPL',
-      packages=find_packages(exclude=['ez_setup']),
-      namespace_packages=['collective'],
-      include_package_data=True,
-      zip_safe=False,
-      install_requires=[
-          'setuptools',
-          # -*- Extra requirements: -*-
+
+setup(
+    author='Alex Clark',
+    author_email='aclark@aclark.net',
+    classifiers=[
+      "Framework :: Plone",
+      "Programming Language :: Python",
       ],
-      entry_points="""
-      # -*- Entry points: -*-
-
-      [z3c.autoinclude.plugin]
-      target = plone
-      """,
-      setup_requires=["PasteScript"],
-      paster_plugins=["ZopeSkel"],
-      )
+    description="A tool to mock up ad hoc forms in Plone",
+    entry_points={
+        'z3c.autoinclude.plugin': 'target = plone',
+    },
+    include_package_data=True,
+    install_requires=[
+        'setuptools',
+    ],
+    keywords='html form marshall zope',
+    license='GPL',
+    long_description=(
+        open("README.txt").read() +
+        open(os.path.join("docs", "INSTALL.txt")).read() +
+        open(os.path.join("docs", "HISTORY.txt")).read()
+    ),
+    namespace_packages=[
+        'collective'
+    ],
+    name='collective.formtoy',
+    packages=find_packages(),
+    url='http://svn.plone.org/svn/collective/',
+    version=VERSION,
+    zip_safe=False,
+)
