@@ -23,7 +23,7 @@ setup(
     keywords='html form marshall zope',
     license='GPL',
     long_description=(
-        open("README.txt").read() +
+        open("README.rst").read() +
         open(os.path.join("docs", "INSTALL.txt")).read() +
         open(os.path.join("docs", "HISTORY.txt")).read()
     ),
